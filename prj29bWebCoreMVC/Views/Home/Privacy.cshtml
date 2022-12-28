@@ -1,0 +1,76 @@
+﻿@{
+    //ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+@*
+<p>Use this page to detail your site's privacy </p>
+<p>policy.</p>
+*@
+1
+<br />
+@if (DateTime.IsLeapYear(DateTime.Now.Year))
+{
+    @DateTime.Now.Year @:is a leap year.
+}
+else
+{
+    @DateTime.Now.Year @:is not a leap year.
+}
+<br />
+2
+@for (var i = 10; i < 15; i++)
+{
+  <div> Line @i<br/> </div>
+}
+
+
+3
+@{
+    var price = 20;
+}
+
+@if (price > 30)
+{
+<p>The price is too high.</p>
+}
+else
+{
+<p>The price is OK.</p>
+}
+
+4
+    @{
+        var message = "";
+        var weekday = DateTime.Now.DayOfWeek;
+        var day = weekday.ToString();
+    }
+
+    @switch (day)
+    {
+        case "Monday":
+            message = "This is the first weekday.";
+            break;
+        case "Thursday":
+            message = "Only one day before weekend.";
+            break;
+        case "Friday":
+            message = "Tomorrow is weekend!";
+            break;
+        default:
+            message = "Today is " + day;
+            break;
+    }
+<p>@message</p>
+
+    5
+    @{ if (DateTime.Now.Hour > 12)
+    { 
+        <p> Good Evening </p> }
+    else
+    {
+        <p>Good Morning.</p>
+    }
+}
+
+<!-- comments in html -->
