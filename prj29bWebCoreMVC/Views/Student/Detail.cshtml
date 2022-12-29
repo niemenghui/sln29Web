@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model prj29bWebCoreMVC.ViewModels.StudentDetailViewModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>@Model.Title</title>
+</head>
+<body>
+	<h1>@Model.Header</h1>
+	<div>
+		StudentId : @Model.Student.StudentId
+	</div>
+	<div>
+		Name : @Model.Student.Name
+	</div>
+	<div>
+		Branch : @Model.Student.Branch
+	</div>
+	<div>
+		Section : @Model.Student.Section
+	</div>
+	<div>
+		Gender : @Model.Student.Gender
+	</div>
+
+	<h1>Student Address41</h1>
+	<div>
+		City : @Model.Address.City
+	</div>
+	<div>
+		State : @Model.Address.State
+	</div>
+	<div>
+		Country : @Model.Address.Country
+	</div>
+	<div>
+		Zip : @Model.Address.Zip
+	</div>
+</body>
+</html>
