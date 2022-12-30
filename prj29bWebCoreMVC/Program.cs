@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using prj29bWebCoreMVC.Data;
+using prj29bWebCoreMVC.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<prj29bWebCoreMVCContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("prj29bWebCoreMVCContext") ?? throw new InvalidOperationException("Connection string 'prj29bWebCoreMVCContext' not found.")));
@@ -9,6 +11,12 @@ builder.Services.AddDbContext<prj29bWebCoreMVCContext>(options =>
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+	var services = scope.ServiceProvider;
+	SeedData.Initialize(services);
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
