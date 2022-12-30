@@ -1,101 +1,122 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - prj29bWebCoreMVC</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/prj29bWebCoreMVC.styles.css" asp-append-version="true" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - prj29bWebCoreMVC</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/prj29bWebCoreMVC.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">prj29bWebCoreMVC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>                
-            </div>
-        </nav>
+	<header>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">        
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1 ">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">HomeHome</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">HomePrivacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="String2">HomeString2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Content3">HomeContent3</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ObjectResult4">HomeObjectResult4</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Staff" asp-action="List">EmployeeList21</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">CustomerIndex30</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Phone">CustomerPhone31</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Country">CustomerCountry32</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1 ">                         
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Index">StudentIndex41</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Detail">StudentDetail42</a> 
-                        </li>
+		<div class="container mt-3">
+			<h2>prj29bWebCoreMVC</h2>
+			<ul class="nav nav-tabs">
 
 
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+				<div class="btn-group">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" onclick="location.href='https://google.com';">googleHome</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" href="#">Tablet</a></li>
+						<li><a class="dropdown-item" href="#">Smartphone</a></li>
+					</ul>
+				</div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2022 - prj29bWebCoreMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+				<li class="nav-item">
+					<a class="nav-link active" href="/">HomeActive</a>
+				</li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Home</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">HomeIndex10</a>
+						</li>
+						<li>
+							<a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Privacy">HomePrivacy11</a>
+						</li>
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="String2">HomeString12</a>
+						</li>
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Content3">HomeContent13</a>
+						</li>
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="ObjectResult4">HomeObjectResult14</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" asp-area="" asp-controller="Staff" asp-action="List">EmployeeList21</a>
+				</li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Customer</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">CustomerIndex30</a>
+						</li>
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Phone">CustomerPhone31</a>
+						</li>
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Country">CustomerCountry32</a>
+						</li>
+					</ul>
+				</li>
+
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Student</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Index">StudentIndex40</a>
+						</li>
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Detail">StudentDetail41</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Movie</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="Index">MovieIndex50</a>
+						</li>
+						<li>
+							<a class="nav-link text-dark" asp-area="" asp-controller="Movies" asp-action="Index">MoviesIndex51</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">Disabled</a>
+				</li>
+			</ul>
+		</div>
+
+	</header>
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
+
+	<footer class="border-top footer text-muted">
+		<div class="container">
+			&copy; 2022 - prj29bWebCoreMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+		</div>
+	</footer>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
 
 
-    
-     
+

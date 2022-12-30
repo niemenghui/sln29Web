@@ -1,4 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using prj29bWebCoreMVC.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<prj29bWebCoreMVCContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("prj29bWebCoreMVCContext") ?? throw new InvalidOperationException("Connection string 'prj29bWebCoreMVCContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
