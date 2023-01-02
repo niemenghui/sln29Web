@@ -9,7 +9,6 @@ namespace prj29bWebCoreMVC.Models
 {
 	public static class SeedData
 	{
-
 		public static void Initialize(IServiceProvider serviceProvider)
 		{
 			using (var context = new prj29bWebCoreMVCContext(
@@ -31,14 +30,14 @@ namespace prj29bWebCoreMVC.Models
 					},
 					new Movie
 					{
-						Title = "Vacation to Paris2 ",
+						Title = "Little 2 ",
 						ReleaseDate = DateTime.Parse("1984-3-13"),
-						Genre = "Comedy",
+						Genre = "Disney",
 						Price = 8.99M
 					},
 					new Movie
 					{
-						Title = "Mr. Bean 3",
+						Title = "Jim 3",
 						ReleaseDate = DateTime.Parse("1986-2-23"),
 						Genre = "Comedy",
 						Price = 9.99M

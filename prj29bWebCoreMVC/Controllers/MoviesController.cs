@@ -20,19 +20,18 @@ namespace prj29bWebCoreMVC.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index99()
+        public async Task<IActionResult> Index11()
         {
               return View(await _context.Movie.ToListAsync());
         }
 
-
         [HttpPost]
-        public string Index(string searchString, bool notUsed)
+        public string Index33(string searchString, bool notUsed)
         {
             return "From [HttpPost]Index: filter on " + searchString;
         }
 
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString)  //  Index22.
         {
             if (_context.Movie == null)
             {
@@ -49,7 +48,6 @@ namespace prj29bWebCoreMVC.Controllers
 
             return View(await movies.ToListAsync());
         }
-
 
 
         // GET: Movies/Details/5
