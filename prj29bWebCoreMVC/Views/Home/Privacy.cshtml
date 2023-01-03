@@ -1,5 +1,5 @@
 ﻿@{
-    //ViewData["Title"] = "Privacy Policy";
+	//ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
@@ -7,70 +7,201 @@
 <p>Use this page to detail your site's privacy </p>
 <p>policy.</p>
 *@
-1
+
+@{
+	var today = DateTime.Today;
+	DateTime tomorrow = DateTime.Now.AddDays(1);
+}
+
+<div>The value of today is: @today</div>
+<div>The value of tomorrow is: @tomorrow</div>
+
+
+
+1.
 <br />
 @if (DateTime.IsLeapYear(DateTime.Now.Year))
 {
-    @DateTime.Now.Year @:is a leap year.
+	@DateTime.Now.Year @:is a leap year.
 }
 else
 {
-    @DateTime.Now.Year @:is not a leap year.
+	@DateTime.Now.Year @:is not a leap year.
 }
 <br />
-2
+<br />
+
+2.
 @for (var i = 10; i < 15; i++)
 {
-  <div> Line @i<br/> </div>
+	<div> Line @i<br /> </div>
 }
+<br />
 
 
-3
+<!-- comments in html -->
+3.
 @{
-    var price = 20;
+	var price = 20;
 }
 
 @if (price > 30)
 {
-<p>The price is too high.</p>
+	<p>The price is too high.</p>
 }
 else
 {
-<p>The price is OK.</p>
+	<p>The price is OK.</p>
 }
 
-4
-    @{
-        var message = "";
-        var weekday = DateTime.Now.DayOfWeek;
-        var day = weekday.ToString();
-    }
 
-    @switch (day)
-    {
-        case "Monday":
-            message = "This is the first weekday.";
-            break;
-        case "Thursday":
-            message = "Only one day before weekend.";
-            break;
-        case "Friday":
-            message = "Tomorrow is weekend!";
-            break;
-        default:
-            message = "Today is " + day;
-            break;
-    }
+4.
+@{
+	var message = "";
+	var weekday = DateTime.Now.DayOfWeek;
+	var day = weekday.ToString();
+}
+
+@switch (day)
+{
+	case "Monday":
+		message = "This is the first weekday.";
+		break;
+	case "Thursday":
+		message = "Only one day before weekend.";
+		break;
+	case "Friday":
+		message = "Tomorrow is weekend!";
+		break;
+	default:
+		message = "Today is " + day;
+		break;
+}
 <p>@message</p>
 
-    5
-    @{ if (DateTime.Now.Hour > 12)
-    { 
-        <p> Good12 Evening </p> }
-    else
-    {
-        <p>Good 555Morning.</p>
-    }
+
+	5.
+@{
+	if (DateTime.Now.Hour > 12)
+	{
+		<p> Good12 Evening </p>
+	}
+	else
+	{
+		<p>Good 555Morning.</p>
+	}
+
 }
 
-<!-- comments in html -->
+
+	6.
+@{
+	int[] scores = new int[] { 97, 92, 81, 60 };
+	IEnumerable<int> scoreQuery = from score in scores
+										where score > 80
+										where (score % 2) == 0
+										select score;
+}
+@foreach (int c1 in scoreQuery)
+{
+	<p> bigEvenNumber: @c1</p>
+}
+
+
+
+7.
+@{
+	string[] words = { "hello", "wonderful", "LINQ", "beautiful", "world" };
+	//Get only short words
+	var shortWords = from word in words where word.Length <= 5 select word;
+
+	//Print each word out
+	foreach (var word in shortWords)
+	{
+		//Console.WriteLine(word);
+		<li>short9Word @word</li>
+	}
+	int wordCount = shortWords.Count();
+	<p> wordCount: @wordCount</p>
+}
+<br />
+
+
+	8.
+	to do more: the xml file.
+@{
+	@using System.Xml.Linq
+	// Create a data source from an XML document.
+	// using System.Xml.Linq
+	//XElement contacts = XElement.Load(@"c:\myContactList.xml");
+	XElement contacts = XElement.Load(@"myContactList.xml");
+
+	string myXML = @"<Departments>
+                       <Department>Account</Department>
+                       <Department>Sales</Department>
+                       <Department>Pre-Sales</Department>
+                       <Department>Marketing</Department>
+                       </Departments>";
+
+	XDocument xdoc = new XDocument();
+	xdoc = XDocument.Parse(myXML);
+
+	var result = xdoc.Element("Departments").Descendants();
+
+	foreach (XElement item in result)
+	{
+	//Console.WriteLine("Department Name - " + item.Value);
+		<li>Department Name -  @item.Value</li>
+	}
+}
+<br />
+
+
+	9.
+@{
+	List<Employee> employees = new List<Employee>();
+	employees.Add(new Employee { ID = 1, Name = "Jen" });
+	employees.Add(new Employee { ID = 2, Name = "Sam" });
+	employees.Add(new Employee { ID = 3, Name = "Lily" });
+
+	var employeeList = from e in employees
+								select e;
+
+	foreach (var emp in employeeList)
+	{
+		//Console.WriteLine("Id = {0} , Name = {1}", emp.ID, emp.Name);
+		<li>rowEmplyee: @emp.ID+ @Environment.NewLine+ @emp.Name</li>
+	}
+
+}
+<br />
+
+
+	10.
+@{
+	int[] fibNum = { 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+	double averageValue = fibNum.Where(num => num % 2 == 1).Average();
+	//Console.WriteLine(averageValue);
+	<p> averageValue: @averageValue</p>
+}
+<br />
+
+
+		11.
+		to do more about display.
+@{
+	int[] source = new[] { 3, 8, 4, 6, 1, 7, 9, 2, 4, 8 };
+
+	foreach (int i in source.Where(x =>
+	{
+		if (x <= 3)
+			return true;
+		else if (x >= 7)
+			return true;
+		return false;
+	}
+		)) ;
+	//Console.WriteLine(i);
+	//<li> numbers between -  @i</li>
+}
+<br />

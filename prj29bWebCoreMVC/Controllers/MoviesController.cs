@@ -38,8 +38,13 @@ namespace prj29bWebCoreMVC.Controllers
                 return Problem("Entity set 'MvcMovieContext.Movie'  is null.");
             }
 
+            //var movies = from m in _context.Movie 
             var movies = from m in _context.Movie
-                         select m;
+                         //where m.Title.Contains("met")
+                         //where m.Title.Length <= 9 && m.Title == "Devon"
+						 //orderby m.Price ascending
+						 //orderby m.Title ascending
+						 select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
